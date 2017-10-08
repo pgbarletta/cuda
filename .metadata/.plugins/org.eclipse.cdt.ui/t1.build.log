@@ -1,0 +1,35 @@
+10:47:31 **** Build of configuration Debug for project t1 ****
+make all 
+Building file: ../src/bodysystemcuda.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-8.0/bin/nvcc -I"/usr/local/cuda-8.0/samples/5_Simulations" -I"/usr/local/cuda-8.0/samples/common/inc" -I"/home/german/labo/17/cuda/t1" -G -g -O0 -gencode arch=compute_20,code=sm_20 -m64 -odir "src" -M -o "src/bodysystemcuda.d" "../src/bodysystemcuda.cu"
+nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+/usr/local/cuda-8.0/bin/nvcc -I"/usr/local/cuda-8.0/samples/5_Simulations" -I"/usr/local/cuda-8.0/samples/common/inc" -I"/home/german/labo/17/cuda/t1" -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_20,code=compute_20 -gencode arch=compute_20,code=sm_20 -m64  -x cu -o  "src/bodysystemcuda.o" "../src/bodysystemcuda.cu"
+nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+Finished building: ../src/bodysystemcuda.cu
+ 
+Building file: ../src/nbody.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-8.0/bin/nvcc -I"/usr/local/cuda-8.0/samples/5_Simulations" -I"/usr/local/cuda-8.0/samples/common/inc" -I"/home/german/labo/17/cuda/t1" -G -g -O0 -gencode arch=compute_20,code=sm_20 -m64 -odir "src" -M -o "src/nbody.d" "../src/nbody.cpp"
+nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+/usr/local/cuda-8.0/bin/nvcc -I"/usr/local/cuda-8.0/samples/5_Simulations" -I"/usr/local/cuda-8.0/samples/common/inc" -I"/home/german/labo/17/cuda/t1" -G -g -O0 --compile -m64  -x c++ -o  "src/nbody.o" "../src/nbody.cpp"
+nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+Finished building: ../src/nbody.cpp
+ 
+Building file: ../src/render_particles.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-8.0/bin/nvcc -I"/usr/local/cuda-8.0/samples/5_Simulations" -I"/usr/local/cuda-8.0/samples/common/inc" -I"/home/german/labo/17/cuda/t1" -G -g -O0 -gencode arch=compute_20,code=sm_20 -m64 -odir "src" -M -o "src/render_particles.d" "../src/render_particles.cpp"
+nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+/usr/local/cuda-8.0/bin/nvcc -I"/usr/local/cuda-8.0/samples/5_Simulations" -I"/usr/local/cuda-8.0/samples/common/inc" -I"/home/german/labo/17/cuda/t1" -G -g -O0 --compile -m64  -x c++ -o  "src/render_particles.o" "../src/render_particles.cpp"
+nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+Finished building: ../src/render_particles.cpp
+ 
+Building target: t1
+Invoking: NVCC Linker
+/usr/local/cuda-8.0/bin/nvcc --cudart static -L"/usr/local/cuda-8.0/samples/common/lib/linux/x86_64" -lGL -lGLU -lglut  --relocatable-device-code=false -gencode arch=compute_20,code=compute_20 -gencode arch=compute_20,code=sm_20 -m64 -link -o  "t1"  ./src/bodysystemcuda.o ./src/nbody.o ./src/render_particles.o  /usr/local/cuda-8.0/samples/common/lib/linux/x86_64/libGLEW.a 
+nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+Finished building target: t1
+ 
+
+10:47:34 Build Finished (took 2s.411ms)
+

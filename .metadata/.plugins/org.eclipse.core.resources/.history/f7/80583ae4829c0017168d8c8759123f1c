@@ -1,0 +1,12 @@
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+
+static const unsigned int M = 3;
+static const unsigned int N = 3;
+
+int main() {
+return;
+}

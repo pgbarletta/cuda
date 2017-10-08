@@ -1,0 +1,24 @@
+16:53:56 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(51): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+
+16:54:02 Build Finished (took 6s.279ms)
+

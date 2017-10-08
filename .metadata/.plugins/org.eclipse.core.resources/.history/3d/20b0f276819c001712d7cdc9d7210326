@@ -1,0 +1,145 @@
+/*
+	testeando
+*/
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+static const unsigned int M = 3;
+static const unsigned int N = 3;
+
+/////////
+
+__global__ void mtx_mul_test();
+
+int parseCLI(const int argc, char**argv, char *filename_0, char *filename_1);
+void read_mtx(const char *in_filename, float *mtx, const unsigned int M, const unsigned int N);
+void read_vtr(const char *in_filename, float *vtr, const unsigned int N);
+
+/////////
+
+int main (int argc, char** argv) {
+
+    // CPU
+    char in_filename_1[20], in_filename_2[20];
+    float *mtx_a, *mtx_b;
+    mtx_a = (float*) malloc(M * N * sizeof(float)); mtx_b = (float*) malloc(M * N * sizeof(float)); 
+
+    parseCLI(argc, argv, in_filename_1, in_filename_2);
+    read_mtx(in_filename_1, mtx_a, M, N);
+    read_mtx(in_filename_2, mtx_b, M, N);
+
+	printf("mtx_a:\n");
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            printf("%f\t", mtx_a[i+(j*N)]);
+        }
+        printf("\n");
+    }
+    printf("\nmtx_b:\n");
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            printf("%f\t", mtx_b[i+(j*N)]);
+        }
+        printf("\n");
+    }
+    printf("\n------:\n");
+
+    // GPU
+    dim3 dimGrid(1, 1);
+    dim3 dimBlock(3, 3);
+    float *d_mtx_a, *d_mtx_b;
+    cudaMalloc((void**) &d_mtx_a, M * N * sizeof(float));
+    cudaMalloc((void**) &d_mtx_b, M * N * sizeof(float));
+    cudaMemcpy(d_mtx_a, mtx_a, M * N * sizeof(float), cudaMemcpyHostToDevice);       
+    cudaMemcpy(d_mtx_b, mtx_b, M * N * sizeof(float), cudaMemcpyHostToDevice);
+           
+
+//    mtx_mul_test<<<
+
+
+    return 0;
+}
+
+///////// Kernels
+
+__global__ void mtx_mul_test() {
+
+
+    return;
+}
+
+///////// Functions
+
+int parseCLI(const int argc, char**argv, char *filename_0, char *filename_1)
+{
+
+    bool m_flag, v_flag;
+    char c;
+
+    while ((c = getopt (argc, argv, "m:v:")) != -1) {
+        switch (c) {
+            case 'm':
+                if (sizeof(optarg) > 20) {
+                    fprintf (stderr, "Filename too big.\n");
+                    return 1;
+                }
+
+                memset(filename_0, '\0', sizeof(optarg));
+                strcpy(filename_0, optarg); 
+                m_flag = 1;
+                break;
+            case 'v':
+                if (sizeof(optarg) > 20) {
+                    fprintf (stderr, "Filename too big.\n");
+                    return 1;
+                }
+
+                memset(filename_1, '\0', sizeof(optarg));
+                strcpy(filename_1, optarg);
+                filename_1 = optarg; 
+                v_flag = 1;
+                break;
+            case '?':
+                if (optopt == 'i' || optopt == 'o')
+                    fprintf (stderr, "Options require an argument.\n");
+                return 1;
+            default:
+                fprintf (stderr, "Mal\n");
+                return 1;
+        } 
+    }
+    if ((m_flag && v_flag) != 1) {
+        fprintf (stderr, "Mal\n");
+        return 1;
+    }
+
+    return 0;
+}
+
+void read_mtx(const char *in_filename, float *mtx, const unsigned int M, const unsigned int N) {
+
+    FILE *in_file;
+    in_file = fopen(in_filename, "r");
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            fscanf(in_file, "%f\t", &mtx[i+(j*N)]);
+        }
+    }
+
+    return;
+}
+
+void read_vtr(const char *in_filename, float *vtr, const unsigned int N) {
+    FILE *in_file;
+    in_file = fopen(in_filename, "r");
+
+    for (int i = 0; i < N; i++) {
+        fscanf(in_file, "%f\t", &vtr[i]);
+    }
+
+    return;
+
+}
