@@ -1,4 +1,4 @@
-16:53:56 **** Incremental Build of configuration Debug for project cfiles ****
+17:50:18 **** Incremental Build of configuration Debug for project cfiles ****
 make all 
 Building file: ../src/main.cu
 Invoking: NVCC Compiler
@@ -6,7 +6,7 @@ Invoking: NVCC Compiler
 /usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
 /home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
           detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
-../src/main.cu(51): here
+../src/main.cu(59): here
 
 /home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
 
@@ -20,5 +20,5 @@ Invoking: NVCC Linker
 Finished building target: cfiles
  
 
-16:54:02 Build Finished (took 6s.279ms)
+17:50:22 Build Finished (took 3s.415ms)
 

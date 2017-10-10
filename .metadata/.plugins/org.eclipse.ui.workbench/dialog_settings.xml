@@ -5,31 +5,37 @@
 		<item value="556" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="1350" key="dialogHeight"/>
-		<item value="2400" key="dialogWidth"/>
+		<item value="1326" key="dialogHeight"/>
+		<item value="2376" key="dialogWidth"/>
 		<list key="textEntries">
 			<item value="1"/>
-			<item value="1"/>
+			<item value="2"/>
+			<item value="2"/>
 			<item value="1"/>
 			<item value="1"/>
 		</list>
 		<list key="orderedElements">
-			<item value="org.eclipse.cdt.codan.internal.ui.views.ProblemDetails"/>
-			<item value="org.eclipse.ui.views.ProblemView"/>
+			<item value="org.eclipse.debug.ui.DebugPerspective"/>
 			<item value="org.eclipse.debug.ui.BreakpointView"/>
 			<item value="org.eclipse.debug.ui.DebugView"/>
+			<item value="org.eclipse.cdt.codan.internal.ui.views.ProblemDetails"/>
+			<item value="org.eclipse.ui.views.ProblemView"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="org.eclipse.ui.perspectives"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 		</list>
 		<list key="textArray">
+			<item value="debu"/>
+			<item value="view"/>
+			<item value="break"/>
+			<item value="de"/>
+			<item value="debug"/>
 			<item value="prob"/>
 			<item value="proble"/>
-			<item value="view"/>
-			<item value="debug"/>
 		</list>
 	</section>
 </section>

@@ -17,13 +17,11 @@
 
 #include "chemfiles.hpp"
 
-const static int threadsPerBlock = 1024;
-const static int blocksPerGrid = 10;
-const static int M = 3;
 /////////
 
-__global__ void dot_pdt(float* d_vtr_a, float* d_vtr_b, const int M,
-                float* d_vtr_o);
+__global__ void init_grilla(float* grilla, int grilla_size, float x_min, float y_min,
+		float z_min, float resolution);
+
 template <typename T> std::vector<unsigned int> sort_indices(const std::vector<T> &v);
 
 //int parseCLI(const int argc, char**argv, char *filename_0, char *filename_1);
@@ -31,64 +29,96 @@ template <typename T> std::vector<unsigned int> sort_indices(const std::vector<T
                 //const unsigned int N);
 
 /////////
-using V3D = std::array<double, 3>;
-using ANA_molecule = std::vector<std::pair<V3D, double>>;
 
 int main(int argc, char **argv)
 {
-	// CPU
-
+	// Get positions and get variables ready.
 	chemfiles::Trajectory input_pdb_traj("/home/german/labo/16/ANA/1mtn.pdb");
 	auto in_frm = input_pdb_traj.read();
 	auto in_top = in_frm.topology();
 	auto in_xyz = in_frm.positions();
-	ANA_molecule tmp_molecule_points, molecule_points;
-	std::vector<unsigned int> atom_indices_to_sort;
+	const static size_t in_xyz_memsize = in_xyz.size() * 3 * sizeof(double);
+	const static size_t in_vdw_memsize = in_xyz.size() * sizeof(double);
+	double *tmp_molecule_points, *molecule_points, *tmp_vdw_radii, *vdw_radii;
+	std::vector<unsigned int> atom_indices_to_sort(in_xyz.size());
 
+	// Allocate memory.
+	tmp_molecule_points = (double*) malloc(in_xyz_memsize);
+	tmp_vdw_radii = (double*) malloc(in_vdw_memsize);
+	cudaMallocManaged((void**)&molecule_points, in_xyz_memsize);
+	cudaMallocManaged((void**)&vdw_radii, in_vdw_memsize);
+	cudaStream_t stream1;
+	cudaStreamCreate(&stream1);
+	cudaMemPrefetchAsync(molecule_points, in_xyz_memsize, cudaCpuDeviceId, stream1);
+	cudaMemPrefetchAsync(vdw_radii, in_xyz_memsize, cudaCpuDeviceId, stream1);
+
+	// Get atoms positions and VdW radii.
+	size_t j = 0;
     for (const auto &residuo : in_top.residues()) {
     	for (const auto &i : residuo) {
-            atom_indices_to_sort.push_back(i);
-    		V3D atomo_xyz = { in_xyz[i][0], in_xyz[i][1], in_xyz[i][2] };
-    		double radio = in_top[i].vdw_radius().value_or(1.5);
-    		tmp_molecule_points.push_back(std::make_pair(atomo_xyz, radio));
+            tmp_molecule_points[j * 3] = in_xyz[i][0];
+    		tmp_molecule_points[j * 3 + 1] = in_xyz[i][1];
+    		tmp_molecule_points[j * 3 + 2] = in_xyz[i][2];
+    		tmp_vdw_radii[j] = in_top[i].vdw_radius().value_or(1.5);
+
+    		atom_indices_to_sort[j] = i;
+    		++j;
     	}
     }
-
-
 	const auto atom_sorting_indices = sort_indices(atom_indices_to_sort);
-	molecule_points.reserve(tmp_molecule_points.size());
-	for (const auto &i : atom_sorting_indices)
-		molecule_points.push_back(std::move(tmp_molecule_points[i]));
 
-
-    for (const auto &each : molecule_points) {
-    	std::cout << each.first[0] << "  " << each.first[1] << "  " << each.first[2] << "  " << each.second << '\n';
-    	//std::cout << each.second << '\n';
-    }
-
-//	vtr_a = (float*) malloc(M * sizeof(float));
-
-
-
-
+	// Move sorted data to UM.
+	for (size_t i = 0 ; i < in_xyz.size() ; ++i) {
+		molecule_points[i * 3] = std::move(tmp_molecule_points[atom_sorting_indices[i] * 3]);
+		molecule_points[i * 3 + 1] = std::move(tmp_molecule_points[atom_sorting_indices[i] * 3 + 1]);
+		molecule_points[i * 3 + 2] = std::move(tmp_molecule_points[atom_sorting_indices[i] * 3 + 2]);
+		vdw_radii[i] = std::move(tmp_vdw_radii[atom_sorting_indices[i]]);
+	}
+	// Done with unordered data.
+	free(tmp_vdw_radii);
+	free(tmp_molecule_points);
+	//std::cout <<  << "  " << '\n';
 
 	// GPU
+
+
+	const float x_min = 2.0f;
+	const float x_max = 4.0f;
+	const float y_min = 8.0f;
+	const float y_max = 10.0f;
+	const float z_min = -28.0f;
+	const float z_max = -30.0f;
+	const float rtion = 0.1f;
+	const float x_cnt = (x_max - x_min) / rtion;
+	const float y_cnt = (y_max - y_min) / rtion;
+	const float z_cnt = (z_min - z_max) / rtion;
+	const int grilla_size = x_cnt * y_cnt * z_cnt;
+
+
+	static const int threadsPerBlock = 512;
+	static const int blocksPerGrid = 10;
 	dim3 dimBlock(threadsPerBlock, 1, 1);
 	dim3 dimGrid(blocksPerGrid, 1, 1);
-	float *d_vtr_a, *d_vtr_b, *d_vtr_out;
-	cudaMalloc((void**) &d_vtr_a, M * sizeof(float));
-	cudaMalloc((void**) &d_vtr_b, M * sizeof(float));
-	cudaMalloc((void**) &d_vtr_out, blocksPerGrid * sizeof(float));
-	//cudaMemcpy(d_vtr_a, vtr_a, M * sizeof(float), cudaMemcpyHostToDevice);
+	float *grilla, *grilla_fill;
+	cudaMallocManaged((void**)&grilla, sizeof(float) * grilla_size);
+	cudaMallocManaged((void**)&grilla_fill, sizeof(float) * grilla_size);
+
+//	cudaMalloc((void**)&grilla, sizeof(float) * 8000);
+//	float *tempo = (float *)malloc(sizeof(float) * 8000);
 
 
-//	dot_pdt<<<dimGrid, dimBlock>>>(d_vtr_a, d_vtr_b, M, d_vtr_out);
-
-//	cudaMemcpy(vtr_out, d_vtr_out, M * sizeof(float), cudaMemcpyDeviceToHost);
+//	cudaMemPrefetchAsync(grilla, sizeof(float) * (x_cnt + y_cnt + z_cnt), 0, 0);
 
 
+	init_grilla<<<dimGrid, dimBlock>>>(grilla, grilla_size, x_min, y_min, z_min, rtion);
 
+//	cudaMemcpy(grilla, tempo, sizeof(float) * 8000, cudaMemcpyDeviceToHost);
 
+	cudaMemPrefetchAsync(grilla, sizeof(float) * (x_cnt + y_cnt + z_cnt), cudaCpuDeviceId, 0);
+
+	for (size_t i = 0 ; i < grilla_size ; ++i) {
+    	std::cout << grilla[i] << '\n';
+    }
 
 
 
@@ -112,32 +142,16 @@ std::vector<unsigned int> sort_indices(const std::vector<T> &v) {
 }
 ///////// Kernels
 
-__global__ void dot_pdt(float* d_vtr_a, float* d_vtr_b, const int M,
-		float* d_vtr_o) {
+__global__ void init_grilla(float* grilla, int grilla_size, float x_min, float y_min,
+		float z_min, float resolution) {
 
 	int ti = threadIdx.x + blockIdx.x * blockDim.x;
-	__shared__ float tmp_sum[threadsPerBlock];
-	tmp_sum[threadIdx.x] = 0;
 
-	float tmp = 0;
-	while (ti < M) {
-		tmp += d_vtr_a[ti] * d_vtr_b[ti];
-		ti += blockDim.x * gridDim.x;
+	for (int i = ti; i <= (grilla_size/3) ; i++) {
+		grilla[i * 3] = x_min + resolution * (float)i;
+		grilla[i * 3 + 1] = y_min + resolution * (float)i;
+		grilla[i * 3 + 2] = z_min + resolution * (float)i;
 	}
-	tmp_sum[threadIdx.x] = tmp;
-	__syncthreads();
 
-	// Ahora tengo q reducir tmp_sum
-	size_t idx = blockDim.x / 2;
-	while (idx != 0) {
-		if (threadIdx.x < idx) {
-			tmp_sum[threadIdx.x] += tmp_sum[threadIdx.x + idx];
-		}
-		__syncthreads();
-		idx /= 2;
-	}
-	if (threadIdx.x == 0) {
-		d_vtr_o[blockIdx.x] = tmp_sum[0];
-	}
 	return;
 }

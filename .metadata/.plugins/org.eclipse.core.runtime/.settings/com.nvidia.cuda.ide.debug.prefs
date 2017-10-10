@@ -1,2 +1,3 @@
 dot.pinnedThreads=dot_pdt(d_vtr_a\=0x10206600000, d_vtr_b\=0x10206600200, M\=3, d_vtr_o\=0x10206600400)\=(0,0,0)(0,0,0);\:dot_pdt(d_vtr_a\=0x10206600000, d_vtr_b\=0x10206600200, N\=3, d_vtr_o\=0x10206600400)\=(0,0,0)(32,0,0);\:
 eclipse.preferences.version=1
+warn.leaving.debugperspective=always

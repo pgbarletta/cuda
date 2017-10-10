@@ -1,4 +1,5 @@
 ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.cdt.ui.presentation\tTorg.eclipse.cdt.ui.CEditor.presentation
 ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.cdt.ui.editors.textfont
 OPEN_PERSPECTIVE_MODE=2
+RUN_IN_BACKGROUND=true
 eclipse.preferences.version=1
