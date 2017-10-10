@@ -1,13 +1,3 @@
-
-/**
- * Copyright 1993-2012 NVIDIA Corporation.  All rights reserved.
- *
- * Please refer to the NVIDIA end user license agreement (EULA) associated
- * with this source code for terms and conditions that govern your use of
- * this software. Any use, reproduction, disclosure, or distribution of
- * this software and related documentation outside the terms of the EULA
- * is strictly prohibited.
- */
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -20,7 +10,8 @@
 /////////
 
 __global__ void init_grilla(float* grilla, int grilla_size, float x_min, float y_min,
-		float z_min, float resolution);
+		float z_min, float x_max, float y_max, float z_max,
+		int x_cnt, int y_cnt, int z_cnt, float resolution);
 
 template <typename T> std::vector<unsigned int> sort_indices(const std::vector<T> &v);
 
@@ -69,10 +60,14 @@ int main(int argc, char **argv)
 
 	// Move sorted data to UM.
 	for (size_t i = 0 ; i < in_xyz.size() ; ++i) {
-		molecule_points[i * 3] = std::move(tmp_molecule_points[atom_sorting_indices[i] * 3]);
-		molecule_points[i * 3 + 1] = std::move(tmp_molecule_points[atom_sorting_indices[i] * 3 + 1]);
-		molecule_points[i * 3 + 2] = std::move(tmp_molecule_points[atom_sorting_indices[i] * 3 + 2]);
-		vdw_radii[i] = std::move(tmp_vdw_radii[atom_sorting_indices[i]]);
+		molecule_points[i * 3] =
+				std::move(tmp_molecule_points[atom_sorting_indices[i] * 3]);
+		molecule_points[i * 3 + 1] =
+				std::move(tmp_molecule_points[atom_sorting_indices[i] * 3 + 1]);
+		molecule_points[i * 3 + 2] =
+				std::move(tmp_molecule_points[atom_sorting_indices[i] * 3 + 2]);
+		vdw_radii[i] =
+				std::move(tmp_vdw_radii[atom_sorting_indices[i]]);
 	}
 	// Done with unordered data.
 	free(tmp_vdw_radii);
@@ -80,22 +75,19 @@ int main(int argc, char **argv)
 	//std::cout <<  << "  " << '\n';
 
 	// GPU
+	const float x_min = -20.0f;
+	const float x_max = 10.0f;
+	const float y_min = 12.0f;
+	const float y_max = 36.0f;
+	const float z_min = -40.0f;
+	const float z_max = -10.0f;
+	const float resolution = 1.22f;
+	const int x_cnt = (x_max - x_min) / resolution;
+	const int y_cnt = (y_max - y_min) / resolution;
+	const int z_cnt = (z_max - z_min) / resolution;
+	const int grilla_size = x_cnt * y_cnt * z_cnt * 3;
 
-
-	const float x_min = 2.0f;
-	const float x_max = 4.0f;
-	const float y_min = 8.0f;
-	const float y_max = 10.0f;
-	const float z_min = -28.0f;
-	const float z_max = -30.0f;
-	const float rtion = 0.1f;
-	const float x_cnt = (x_max - x_min) / rtion;
-	const float y_cnt = (y_max - y_min) / rtion;
-	const float z_cnt = (z_min - z_max) / rtion;
-	const int grilla_size = x_cnt * y_cnt * z_cnt;
-
-
-	static const int threadsPerBlock = 512;
+	static const int threadsPerBlock = 1024;
 	static const int blocksPerGrid = 10;
 	dim3 dimBlock(threadsPerBlock, 1, 1);
 	dim3 dimGrid(blocksPerGrid, 1, 1);
@@ -110,16 +102,31 @@ int main(int argc, char **argv)
 //	cudaMemPrefetchAsync(grilla, sizeof(float) * (x_cnt + y_cnt + z_cnt), 0, 0);
 
 
-	init_grilla<<<dimGrid, dimBlock>>>(grilla, grilla_size, x_min, y_min, z_min, rtion);
+	init_grilla<<<dimGrid, dimBlock>>>(grilla, grilla_size, x_min, y_min, z_min,
+			x_max, y_max, z_max, x_cnt, y_cnt, z_cnt, resolution);
 
 //	cudaMemcpy(grilla, tempo, sizeof(float) * 8000, cudaMemcpyDeviceToHost);
 
-	cudaMemPrefetchAsync(grilla, sizeof(float) * (x_cnt + y_cnt + z_cnt), cudaCpuDeviceId, 0);
+	cudaMemPrefetchAsync(grilla, sizeof(float) * grilla_size, cudaCpuDeviceId,
+			0);
+
+	// Write output.
+	chemfiles::Topology out_top;
+	chemfiles::Frame out_frm;
+	chemfiles::Trajectory out_traj("/home/german/labo/17/cudana/grid.pdb", 'w');
+	for (size_t i = 0 ; i < grilla_size ; i+=3) {
+		out_top.add_atom(chemfiles::Atom("H", "H0"));
+		out_frm.add_atom(chemfiles::Atom("H"), chemfiles::Vector3D(
+			grilla[i], grilla[i + 1], grilla[i + 2]));
+    }
+	// Applying the topology to the frame will set the atom names and bonds
+	out_frm.set_topology(out_top);
+	// Write
+	out_traj.write(out_frm);
 
 	for (size_t i = 0 ; i < grilla_size ; ++i) {
-    	std::cout << grilla[i] << '\n';
-    }
-
+	    	std::cout << grilla[i] << '\n';
+	}
 
 
 	return 0;
@@ -143,14 +150,29 @@ std::vector<unsigned int> sort_indices(const std::vector<T> &v) {
 ///////// Kernels
 
 __global__ void init_grilla(float* grilla, int grilla_size, float x_min, float y_min,
-		float z_min, float resolution) {
+		float z_min, float x_max, float y_max, float z_max,
+		int x_cnt, int y_cnt, int z_cnt, float resolution) {
 
+	const int nproc = gridDim.x * blockDim.x;
 	int ti = threadIdx.x + blockIdx.x * blockDim.x;
+	//ti = ti + (grilla_size / nproc)
 
-	for (int i = ti; i <= (grilla_size/3) ; i++) {
-		grilla[i * 3] = x_min + resolution * (float)i;
-		grilla[i * 3 + 1] = y_min + resolution * (float)i;
-		grilla[i * 3 + 2] = z_min + resolution * (float)i;
+	while (ti < grilla_size) {
+		if (ti % 3 == 0) {
+			float x_step = x_min + resolution *
+					( ( ti % (x_cnt*3) ) / 3 );
+			grilla[ti] = x_step;
+		} else if (ti % 3 == 1) {
+			float y_step = y_min + resolution *
+					( ( ti % (x_cnt * y_cnt * 3) ) / (3 * x_cnt) );
+			grilla[ti] = y_step;
+
+		} else { // ti % 3 == 2
+			float z_step = z_min + resolution *
+					( ti / (3 * x_cnt * y_cnt) );
+			grilla[ti] = z_step;
+		}
+		ti = ti + nproc;
 	}
 
 	return;
