@@ -2,20 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="1024" key="selection"/>
+		<item value="out" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="out"/>
+			<item value="rtion"/>
+			<item value="*z_min"/>
+			<item value="*x_min"/>
+			<item value="*resolution"/>
 			<item value="1024"/>
 			<item value="tream"/>
 			<item value="stream"/>
-			<item value="etch"/>
-			<item value="V3D"/>
-			<item value="N"/>
 		</list>
 		<list key="replacehistory">
+			<item value="resolution"/>
+			<item value="x_min"/>
 			<item value="M"/>
 		</list>
 	</section>

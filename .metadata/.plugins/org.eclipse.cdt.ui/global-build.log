@@ -5953,3 +5953,512 @@ Invoking: NVCC Linker
 /usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
 Finished building target: cfiles
  
+09:35:47 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(51): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:36:19 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(51): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:42:59 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+make: *** No rule to make target '/home/german/chemfiles/build/install/include/chemfiles.hpp', needed by 'src/main.o'.  Stop.
+09:43:41 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(51): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:47:10 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(51): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:48:11 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(51): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:59:22 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(32): error: explicit type is missing ("int" assumed)
+
+../src/main.cu(77): error: no suitable conversion function from "chemfiles::Trajectory" to "void *" exists
+
+../src/main.cu(78): error: no suitable conversion function from "chemfiles::Frame" to "void *" exists
+
+../src/main.cu(79): error: no suitable conversion function from "chemfiles::Topology" to "void *" exists
+
+../src/main.cu(80): error: no suitable conversion function from "chemfiles::span<chemfiles::Vector3D>" to "void *" exists
+
+../src/main.cu(138): error: identifier "naive_get_vol" is undefined
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(52): here
+
+6 errors detected in the compilation of "/tmp/tmpxft_0000599b_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+10:00:08 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(77): error: no suitable conversion function from "chemfiles::Trajectory" to "void *" exists
+
+../src/main.cu(78): error: no suitable conversion function from "chemfiles::Frame" to "void *" exists
+
+../src/main.cu(79): error: no suitable conversion function from "chemfiles::Topology" to "void *" exists
+
+../src/main.cu(80): error: no suitable conversion function from "chemfiles::span<chemfiles::Vector3D>" to "void *" exists
+
+../src/main.cu(138): error: identifier "naive_get_vol" is undefined
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(52): here
+
+5 errors detected in the compilation of "/tmp/tmpxft_00005a0f_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+10:02:43 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(80): error: no suitable conversion function from "chemfiles::Trajectory" to "void *" exists
+
+../src/main.cu(81): error: no suitable conversion function from "chemfiles::Frame" to "void *" exists
+
+../src/main.cu(82): error: no suitable conversion function from "chemfiles::Topology" to "void *" exists
+
+../src/main.cu(83): error: no suitable conversion function from "chemfiles::span<chemfiles::Vector3D>" to "void *" exists
+
+../src/main.cu(141): error: argument of type "int" is incompatible with parameter of type "float *"
+
+../src/main.cu(141): error: argument of type "double *" is incompatible with parameter of type "float *"
+
+../src/main.cu(142): error: argument of type "double *" is incompatible with parameter of type "float *"
+
+../src/main.cu(142): error: argument of type "size_t" is incompatible with parameter of type "float *"
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(55): here
+
+8 errors detected in the compilation of "/tmp/tmpxft_00005b09_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+10:03:21 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(42): error: a value of type "double *" cannot be assigned to an entity of type "float *"
+
+../src/main.cu(43): error: a value of type "double *" cannot be assigned to an entity of type "float *"
+
+../src/main.cu(80): error: no suitable conversion function from "chemfiles::Trajectory" to "void *" exists
+
+../src/main.cu(81): error: no suitable conversion function from "chemfiles::Frame" to "void *" exists
+
+../src/main.cu(82): error: no suitable conversion function from "chemfiles::Topology" to "void *" exists
+
+../src/main.cu(83): error: no suitable conversion function from "chemfiles::span<chemfiles::Vector3D>" to "void *" exists
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(55): here
+
+6 errors detected in the compilation of "/tmp/tmpxft_00005b90_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+10:03:27 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(42): error: a value of type "double *" cannot be assigned to an entity of type "float *"
+
+../src/main.cu(43): error: a value of type "double *" cannot be assigned to an entity of type "float *"
+
+../src/main.cu(80): error: no suitable conversion function from "chemfiles::Trajectory" to "void *" exists
+
+../src/main.cu(81): error: no suitable conversion function from "chemfiles::Frame" to "void *" exists
+
+../src/main.cu(82): error: no suitable conversion function from "chemfiles::Topology" to "void *" exists
+
+../src/main.cu(83): error: no suitable conversion function from "chemfiles::span<chemfiles::Vector3D>" to "void *" exists
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(55): here
+
+6 errors detected in the compilation of "/tmp/tmpxft_00005bdd_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+10:03:32 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(42): error: a value of type "double *" cannot be assigned to an entity of type "float *"
+
+../src/main.cu(43): error: a value of type "double *" cannot be assigned to an entity of type "float *"
+
+../src/main.cu(80): error: no suitable conversion function from "chemfiles::Trajectory" to "void *" exists
+
+../src/main.cu(81): error: no suitable conversion function from "chemfiles::Frame" to "void *" exists
+
+../src/main.cu(82): error: no suitable conversion function from "chemfiles::Topology" to "void *" exists
+
+../src/main.cu(83): error: no suitable conversion function from "chemfiles::span<chemfiles::Vector3D>" to "void *" exists
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(55): here
+
+6 errors detected in the compilation of "/tmp/tmpxft_00005c28_00000000-6_main.cpp1.ii".
+make: *** [src/main.o] Error 1
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+10:03:49 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(80): error: no suitable conversion function from "chemfiles::Trajectory" to "void *" exists
+
+../src/main.cu(81): error: no suitable conversion function from "chemfiles::Frame" to "void *" exists
+
+../src/main.cu(82): error: no suitable conversion function from "chemfiles::Topology" to "void *" exists
+
+../src/main.cu(83): error: no suitable conversion function from "chemfiles::span<chemfiles::Vector3D>" to "void *" exists
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(55): here
+
+4 errors detected in the compilation of "/tmp/tmpxft_00005c86_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+10:04:21 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(55): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+14:37:44 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(206): error: argument of type "__nv_bool" is incompatible with parameter of type "__nv_bool *"
+
+../src/main.cu(206): error: argument of type "__nv_bool" is incompatible with parameter of type "__nv_bool *"
+
+../src/main.cu(206): error: argument of type "__nv_bool" is incompatible with parameter of type "__nv_bool *"
+
+../src/main.cu(219): warning: variable "grilla_void_size" is used before its value is set
+
+../src/main.cu(278): error: identifier "xmin" is undefined
+
+../src/main.cu(273): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(301): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(302): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(303): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(296): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(60): here
+
+4 errors detected in the compilation of "/tmp/tmpxft_00000ae8_00000000-6_main.cpp1.ii".
+make: *** [src/main.o] Error 1
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+14:39:19 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(219): warning: variable "grilla_void_size" is used before its value is set
+
+../src/main.cu(273): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(301): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(302): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(303): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(296): warning: variable "i" was declared but never referenced
+
+../src/main.cu(300): error: dynamic initialization is not supported for function-scope static variables within a __device__/__global__ function
+
+../src/main.cu(301): error: dynamic initialization is not supported for function-scope static variables within a __device__/__global__ function
+
+../src/main.cu(302): error: dynamic initialization is not supported for function-scope static variables within a __device__/__global__ function
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(60): here
+
+3 errors detected in the compilation of "/tmp/tmpxft_00000bcc_00000000-6_main.cpp1.ii".
+make: *** [src/main.o] Error 1
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+14:40:02 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(219): warning: variable "grilla_void_size" is used before its value is set
+
+../src/main.cu(273): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(301): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(302): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(303): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(296): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(60): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(219): warning: variable "grilla_void_size" is used before its value is set
+
+../src/main.cu(273): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(301): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(302): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(303): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(296): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+14:41:29 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(274): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(302): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(303): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(304): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(296): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(297): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(60): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(274): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(302): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(303): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(304): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(296): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(297): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+14:41:50 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(274): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(302): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(303): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(304): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(296): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(297): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(60): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(274): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(302): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(303): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(304): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(296): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(297): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
