@@ -6462,3 +6462,2351 @@ Invoking: NVCC Linker
 /usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
 Finished building target: cfiles
  
+19:05:34 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(274): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(302): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(303): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(304): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(296): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(297): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(60): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(274): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(302): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(303): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(304): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(296): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(297): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+19:14:19 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(208): error: this range-based "for" statement requires a suitable "begin" function and none was found
+
+../src/main.cu(208): error: this range-based "for" statement requires a suitable "end" function and none was found
+
+../src/main.cu(276): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(309): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(310): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(311): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(303): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(304): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(60): here
+
+2 errors detected in the compilation of "/tmp/tmpxft_00001876_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+19:17:17 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(276): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(309): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(310): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(311): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(303): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(304): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(60): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(276): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(309): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(310): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(311): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(303): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(304): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+19:55:13 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(211): error: argument list for class template "std::vector" is missing
+
+../src/main.cu(211): error: expected a ";"
+
+../src/main.cu(212): error: identifier "indices" is undefined
+
+../src/main.cu(230): error: expected a ";"
+
+../src/main.cu(293): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(326): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(327): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(328): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(320): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(321): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+4 errors detected in the compilation of "/tmp/tmpxft_00001fd4_00000000-6_main.cpp1.ii".
+make: *** [src/main.o] Error 1
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+19:55:28 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(211): error: argument list for class template "std::vector" is missing
+
+../src/main.cu(211): error: expected a ";"
+
+../src/main.cu(212): error: identifier "indices" is undefined
+
+../src/main.cu(293): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(326): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(327): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(328): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(320): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(321): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+3 errors detected in the compilation of "/tmp/tmpxft_00002027_00000000-6_main.cpp1.ii".
+make: *** [src/main.o] Error 1
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+19:56:24 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(293): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(326): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(327): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(328): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(320): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(321): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(293): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(326): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(327): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(328): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(320): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(321): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+19:57:36 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(294): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(327): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(328): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(322): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(294): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(327): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(328): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(322): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+21:08:19 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): error: a value of type "__nv_bool *" cannot be used to initialize an entity of type "char *"
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(330): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(323): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+1 error detected in the compilation of "/tmp/tmpxft_00003160_00000000-6_main.cpp1.ii".
+make: *** [src/main.o] Error 1
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+21:09:01 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: conversion from pointer to smaller integer
+
+../src/main.cu(253): error: a value of type "int" cannot be used to initialize an entity of type "int *"
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(330): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(323): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+1 error detected in the compilation of "/tmp/tmpxft_000031d6_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+21:09:52 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(256): error: identifier "cin_array" is undefined
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(330): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(323): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+1 error detected in the compilation of "/tmp/tmpxft_0000328b_00000000-6_main.cpp1.ii".
+make: *** [src/main.o] Error 1
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+21:09:59 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(330): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(323): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(330): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(323): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:05:29 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(255): error: expected a ";"
+
+../src/main.cu(259): warning: parsing restarts here after previous syntax error
+
+../src/main.cu(252): warning: variable "i" was declared but never referenced
+
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(330): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(323): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+1 error detected in the compilation of "/tmp/tmpxft_000038c4_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+07:05:37 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(330): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(323): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(330): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(323): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:07:42 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(330): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(323): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(330): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(323): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:08:14 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(330): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(323): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(295): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(330): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(323): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:09:08 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(298): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(331): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(332): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(333): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(325): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(326): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(298): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(331): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(332): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(333): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(325): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(326): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:09:48 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(300): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(333): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(334): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(335): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(327): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(300): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(333): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(334): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(335): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(327): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:13:34 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(294): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(327): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(328): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(322): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(294): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(327): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(328): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(322): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:14:27 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(294): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(327): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(328): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(322): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(294): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(327): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(328): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(329): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(322): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:16:44 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(300): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(333): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(334): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(335): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(327): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(300): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(333): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(334): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(335): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(327): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:17:40 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(300): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(333): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(334): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(335): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(327): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(63): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(300): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(333): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(334): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(335): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(327): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(328): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:37:18 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(354): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(355): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(348): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/usr/include/c++/5/bits/stl_algobase.h(712): error: operand of "*" must be a pointer
+          detected during:
+            instantiation of "__gnu_cxx::__enable_if<std::__is_scalar<_Tp>::__value, void>::__type std::__fill_a(_ForwardIterator, _ForwardIterator, const _Tp &) [with _ForwardIterator=__nv_bool, _Tp=int]" 
+(748): here
+            instantiation of "void std::fill(_ForwardIterator, _ForwardIterator, const _Tp &) [with _ForwardIterator=__nv_bool, _Tp=int]" 
+../src/main.cu(258): here
+
+1 error detected in the compilation of "/tmp/tmpxft_00001500_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+07:37:50 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(354): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(355): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(348): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/usr/include/c++/5/bits/stl_algobase.h(712): error: operand of "*" must be a pointer
+          detected during:
+            instantiation of "__gnu_cxx::__enable_if<std::__is_scalar<_Tp>::__value, void>::__type std::__fill_a(_ForwardIterator, _ForwardIterator, const _Tp &) [with _ForwardIterator=__nv_bool, _Tp=int]" 
+(748): here
+            instantiation of "void std::fill(_ForwardIterator, _ForwardIterator, const _Tp &) [with _ForwardIterator=__nv_bool, _Tp=int]" 
+../src/main.cu(258): here
+
+1 error detected in the compilation of "/tmp/tmpxft_00001566_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+07:38:15 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(354): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(355): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(348): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(354): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(355): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(348): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:39:11 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(354): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(355): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(348): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(354): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(355): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(348): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:41:28 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(355): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(357): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(349): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(355): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(357): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(349): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:44:52 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(323): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(356): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(357): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(358): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(350): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(351): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(323): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(356): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(357): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(358): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(350): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(351): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:45:19 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(323): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(356): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(357): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(358): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(350): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(351): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(323): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(356): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(357): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(358): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(350): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(351): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:46:15 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(323): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(356): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(357): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(358): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(350): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(351): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(323): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(356): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(357): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(358): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(350): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(351): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:47:10 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(355): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(357): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(349): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(355): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(357): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(349): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:48:30 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(355): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(357): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(349): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(322): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(355): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(357): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(349): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:48:50 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(354): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(355): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(348): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(253): warning: variable "cin_array" was declared but never referenced
+
+../src/main.cu(321): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(354): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(355): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(356): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(348): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:56:29 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(302): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(335): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(336): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(337): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(329): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(330): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(302): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(335): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(336): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(337): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(329): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(330): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:58:00 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(305): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(338): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(339): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(340): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(332): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(333): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(305): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(338): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(339): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(340): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(332): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(333): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+07:59:24 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(308): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(341): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(342): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(343): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(335): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(336): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(308): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(341): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(342): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(343): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(335): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(336): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+08:02:50 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(214): warning: variable "atoms_in_bbox" is used before its value is set
+
+../src/main.cu(313): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(346): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(347): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(348): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(340): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(341): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(214): warning: variable "atoms_in_bbox" is used before its value is set
+
+../src/main.cu(313): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(346): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(347): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(348): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(340): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(341): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+08:03:22 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(214): warning: variable "atoms_in_bbox" is used before its value is set
+
+../src/main.cu(313): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(346): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(347): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(348): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(340): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(341): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(214): warning: variable "atoms_in_bbox" is used before its value is set
+
+../src/main.cu(313): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(346): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(347): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(348): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(340): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(341): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+08:05:46 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(314): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(347): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(348): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(349): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(341): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(342): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(314): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(347): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(348): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(349): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(341): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(342): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+08:06:25 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(314): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(347): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(348): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(349): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(341): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(342): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(314): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(347): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(348): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(349): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(341): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(342): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+08:15:35 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(312): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(345): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(346): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(347): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(339): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(340): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(312): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(345): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(346): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(347): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(339): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(340): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+08:16:02 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(311): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(344): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(345): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(346): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(338): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(339): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(311): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(344): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(345): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(346): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(338): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(339): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+08:22:32 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(311): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(344): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(345): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(346): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(338): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(339): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(311): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(344): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(345): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(346): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(338): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(339): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+08:42:34 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(256): error: identifier "sz_lo" is undefined
+
+../src/main.cu(257): error: expected a ";"
+
+../src/main.cu(261): error: identifier "cin_array" is undefined
+
+../src/main.cu(316): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(350): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(343): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(344): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+3 errors detected in the compilation of "/tmp/tmpxft_00002acc_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+08:42:47 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(256): error: identifier "sz_lo" is undefined
+
+../src/main.cu(316): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(350): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(343): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(344): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+1 error detected in the compilation of "/tmp/tmpxft_00002b2a_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+08:42:56 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(316): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(350): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(343): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(344): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(316): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(350): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(343): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(344): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:01:18 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(316): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(350): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(343): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(344): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(316): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(349): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(350): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(343): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(344): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:05:37 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(275): error: identifier "j" is undefined
+
+../src/main.cu(317): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(352): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(344): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(345): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+1 error detected in the compilation of "/tmp/tmpxft_000031d0_00000000-6_main.cpp1.ii".
+src/subdir.mk:18: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+09:05:47 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(317): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(352): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(344): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(345): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(317): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(352): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(344): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(345): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:07:36 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(317): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(352): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(344): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(345): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(317): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(352): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(344): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(345): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:08:58 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(317): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(352): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(344): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(345): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(317): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(352): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(344): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(345): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:10:33 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(317): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(352): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(344): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(345): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(317): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(350): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(351): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(352): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(344): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(345): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:10:46 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+make: Nothing to be done for 'all'.
+09:13:26 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(319): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(352): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(353): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(354): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(346): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(347): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(319): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(352): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(353): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(354): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(346): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(347): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:14:01 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(319): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(352): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(353): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(354): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(346): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(347): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(319): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(352): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(353): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(354): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(346): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(347): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:16:21 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(314): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(347): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(348): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(349): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(341): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(342): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(314): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(347): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(348): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(349): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(341): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(342): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 
+09:17:05 **** Incremental Build of configuration Debug for project cfiles ****
+make all 
+Building file: ../src/main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 -gencode arch=compute_61,code=sm_61  -odir "src" -M -o "src/main.d" "../src/main.cu"
+/usr/local/cuda-9.0/bin/nvcc -I/home/german/chemfiles/build/install/include -G -g -O0 -std=c++11 --compile --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61  -x cu -o  "src/main.o" "../src/main.cu"
+../src/main.cu(314): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(347): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(348): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(349): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(341): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(342): warning: variable "i" was declared but never referenced
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+          detected during instantiation of "chemfiles::span<T>::reference chemfiles::span<T>::operator[](chemfiles::span<T>::size_type) [with T=chemfiles::Vector3D]" 
+../src/main.cu(64): here
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(169): warning: pointless comparison of unsigned integer with zero
+
+/home/german/chemfiles/build/install/include/chemfiles/span.hpp(174): warning: pointless comparison of unsigned integer with zero
+
+../src/main.cu(314): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(347): warning: variable "yi" was declared but never referenced
+
+../src/main.cu(348): warning: variable "zi" was declared but never referenced
+
+../src/main.cu(349): warning: variable "dist_x" was declared but never referenced
+
+../src/main.cu(341): warning: variable "nproc" was declared but never referenced
+
+../src/main.cu(342): warning: variable "i" was declared but never referenced
+
+Finished building: ../src/main.cu
+ 
+Building target: cfiles
+Invoking: NVCC Linker
+/usr/local/cuda-9.0/bin/nvcc --cudart static -L/home/german/chemfiles/build/install/lib -L/usr/lib/x86_64-linux-gnu --relocatable-device-code=false -gencode arch=compute_61,code=compute_61 -gencode arch=compute_61,code=sm_61 -link -o  "cfiles"  ./src/main.o   -lchemfiles -lnetcdf
+Finished building target: cfiles
+ 

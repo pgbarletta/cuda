@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <algorithm>
 #include <cuda.h>
 
 #include "chemfiles.hpp"
@@ -22,6 +23,9 @@ __global__ void naive_get_vol(float* grilla, int grilla_size,
 		float* grilla_void, int * grilla_void_size);
 
 template <typename T> std::vector<unsigned int> sort_indices(const std::vector<T> &v);
+
+void getIndicesFromBoolArray(bool* in_array, const int n,
+		std::vector<int>& indices);
 
 //int parseCLI(const int argc, char**argv, char *filename_0, char *filename_1);
 //void read_mtx(const char *in_filename, float *mtx, const unsigned int M,
@@ -82,7 +86,6 @@ int main(int argc, char **argv)
 	// Done with unordered data.
 	free(tmp_vdw_radii);
 	free(tmp_molecule_points);
-	//std::cout <<  << "  " << '\n';
 
 	// GPU
 	const float x_min = -15.0f;
@@ -114,10 +117,7 @@ int main(int argc, char **argv)
 
 	init_grilla<<<dimGrid, dimBlock>>>(grilla, grilla_size, x_min, y_min, z_min,
 			x_max, y_max, z_max, x_cnt, y_cnt, z_cnt, resolution);
-
-
-	cudaMemPrefetchAsync(grilla, sizeof(float) * grilla_size, cudaCpuDeviceId,
-			0);
+	cudaMemPrefetchAsync(grilla, sizeof(float) * grilla_size, cudaCpuDeviceId);
 
 	// Write output.
 	chemfiles::Topology out_top;
@@ -196,16 +196,27 @@ int main(int argc, char **argv)
 	dimBlock.x = threadsPerBlock_2;
 	dimGrid.x = blocksPerGrid_2;
 	bool *atoms_in_bbox, *d_atoms_in_x, *d_atoms_in_y, *d_atoms_in_z;
-	cudaMallocManaged((void**)&atoms_in_bbox, sizeof(float) * natoms);
+	atoms_in_bbox = (bool *) malloc(natoms);
+	bool *d_atoms_in_bbox;
+	cudaMalloc((void**)&d_atoms_in_bbox, sizeof(bool) * natoms);
+
+	cudaMallocManaged((void**)&atoms_in_bbox, sizeof(bool) * natoms);
 	cudaMalloc((void**)&d_atoms_in_x, sizeof(bool) * natoms);
 	cudaMalloc((void**)&d_atoms_in_y, sizeof(bool) * natoms);
 	cudaMalloc((void**)&d_atoms_in_z, sizeof(bool) * natoms);
 
-
 	in_bbox<<<dimGrid, dimBlock>>>(molecule_points, x_min, y_min, z_min, x_max,
 			y_max, z_max, natoms, d_atoms_in_x, d_atoms_in_y, d_atoms_in_z,
-			atoms_in_bbox);
+			d_atoms_in_bbox);
+	//cudaMemPrefetchAsync(atoms_in_bbox, sizeof(bool) * natoms, cudaCpuDeviceId);
+	cudaMemcpy(atoms_in_bbox, d_atoms_in_bbox, natoms, cudaMemcpyDeviceToHost);
 
+	std::vector<int> indices;
+	getIndicesFromBoolArray(atoms_in_bbox, natoms, indices);
+
+//	for (size_t i = 0; i < natoms ; ++i) {
+//		std::cout << atoms_in_bbox[i] << "  " << '\n';
+//	}
 
 
 
@@ -236,6 +247,36 @@ std::vector<unsigned int> sort_indices(const std::vector<T> &v) {
        [&v](unsigned int i1, unsigned int i2) { return v[i1] < v[i2]; });
 
   return idx;
+}
+
+// Helper function to get the indices of the true elements of a bool array.
+// Optimized for large (>500) and sparse bool arrays
+void getIndicesFromBoolArray(bool* in_array, const int n,
+		std::vector<int>& indices) {
+
+	auto sz_lo = sizeof(long);
+	long *cin_array = (long *) in_array;
+	int divi = n / sz_lo, resto = n % sz_lo;
+
+	for(size_t i = 0; i < divi ; ++i) {
+		if (cin_array[i] != 0) {
+			size_t lo = i * sz_lo, hi = lo + sz_lo;
+			for(size_t j = lo; j < hi ; ++j) {
+				if (in_array[j] != 0) {
+					indices.push_back(j);
+				}
+			}
+		}
+	}
+
+	for(size_t i = n - resto; i < n ; ++i) {
+			if (in_array[i] != 0) {
+				indices.push_back(i);
+			}
+	}
+
+
+	return;
 }
 ///////// Kernels
 
@@ -275,7 +316,7 @@ __global__ void in_bbox(float* molecule_points, int x_min, int y_min, int z_min,
 	int ti = threadIdx.x + blockIdx.x * blockDim.x;
 
 
-	while (ti < natoms) {
+	if (ti < natoms) {
 		d_atoms_in_x[ti] = ( (molecule_points[ti*3] > x_min) &&
 				(molecule_points[ti*3] < x_max) ) ? true : false;
 
@@ -284,6 +325,11 @@ __global__ void in_bbox(float* molecule_points, int x_min, int y_min, int z_min,
 
 		d_atoms_in_z[ti] = ( (molecule_points[ti*3 + 2] > z_min) &&
 						(molecule_points[ti*3 + 2] < z_max) ) ? true : false;
+	}
+	__syncthreads();
+	if (ti < natoms) {
+		atoms_in_bbox[ti] = d_atoms_in_x[ti] && d_atoms_in_y[ti] &&
+				d_atoms_in_z[ti];
 	}
 
 	return;

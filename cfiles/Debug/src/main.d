@@ -218,33 +218,9 @@ src/main.o : ../src/main.cu \
     /usr/include/c++/5/bits/stl_vector.h \
     /usr/include/c++/5/bits/stl_bvector.h \
     /usr/include/c++/5/bits/vector.tcc \
-    /usr/local/cuda-9.0/bin/../targets/x86_64-linux/include/cuda.h \
-    /home/german/chemfiles/build/install/include/chemfiles.hpp \
-    /home/german/chemfiles/build/install/include/chemfiles/config.hpp \
-    /home/german/chemfiles/build/install/include/chemfiles/exports.hpp \
-    /home/german/chemfiles/build/install/include/chemfiles/generic.hpp \
-    /usr/include/c++/5/functional \
-    /usr/include/c++/5/typeinfo \
-    /usr/include/c++/5/tuple \
+    /usr/include/c++/5/algorithm \
     /usr/include/c++/5/utility \
     /usr/include/c++/5/bits/stl_relops.h \
-    /usr/include/c++/5/array \
-    /usr/include/c++/5/bits/uses_allocator.h \
-    /home/german/chemfiles/build/install/include/chemfiles/Error.hpp \
-    /home/german/chemfiles/build/install/include/chemfiles/Atom.hpp \
-    /home/german/chemfiles/build/install/include/chemfiles/optional.hpp \
-    /usr/include/c++/5/cassert \
-    /home/german/chemfiles/build/install/include/chemfiles/Property.hpp \
-    /usr/include/c++/5/unordered_map \
-    /usr/include/c++/5/ext/aligned_buffer.h \
-    /usr/include/c++/5/bits/hashtable.h \
-    /usr/include/c++/5/bits/hashtable_policy.h \
-    /usr/include/c++/5/bits/unordered_map.h \
-    /home/german/chemfiles/build/install/include/chemfiles/types.hpp \
-    /home/german/chemfiles/build/install/include/chemfiles/utils.hpp \
-    /usr/include/c++/5/sstream \
-    /usr/include/c++/5/bits/sstream.tcc \
-    /usr/include/c++/5/algorithm \
     /usr/include/c++/5/bits/stl_algo.h \
     /usr/include/c++/5/bits/algorithmfwd.h \
     /usr/include/c++/5/bits/stl_heap.h \
@@ -310,6 +286,30 @@ src/main.o : ../src/main.cu \
     /usr/include/c++/5/bits/random.tcc \
     /usr/include/c++/5/numeric \
     /usr/include/c++/5/bits/stl_numeric.h \
+    /usr/local/cuda-9.0/bin/../targets/x86_64-linux/include/cuda.h \
+    /home/german/chemfiles/build/install/include/chemfiles.hpp \
+    /home/german/chemfiles/build/install/include/chemfiles/config.hpp \
+    /home/german/chemfiles/build/install/include/chemfiles/exports.hpp \
+    /home/german/chemfiles/build/install/include/chemfiles/generic.hpp \
+    /usr/include/c++/5/functional \
+    /usr/include/c++/5/typeinfo \
+    /usr/include/c++/5/tuple \
+    /usr/include/c++/5/array \
+    /usr/include/c++/5/bits/uses_allocator.h \
+    /home/german/chemfiles/build/install/include/chemfiles/Error.hpp \
+    /home/german/chemfiles/build/install/include/chemfiles/Atom.hpp \
+    /home/german/chemfiles/build/install/include/chemfiles/optional.hpp \
+    /usr/include/c++/5/cassert \
+    /home/german/chemfiles/build/install/include/chemfiles/Property.hpp \
+    /usr/include/c++/5/unordered_map \
+    /usr/include/c++/5/ext/aligned_buffer.h \
+    /usr/include/c++/5/bits/hashtable.h \
+    /usr/include/c++/5/bits/hashtable_policy.h \
+    /usr/include/c++/5/bits/unordered_map.h \
+    /home/german/chemfiles/build/install/include/chemfiles/types.hpp \
+    /home/german/chemfiles/build/install/include/chemfiles/utils.hpp \
+    /usr/include/c++/5/sstream \
+    /usr/include/c++/5/bits/sstream.tcc \
     /home/german/chemfiles/build/install/include/chemfiles/Frame.hpp \
     /home/german/chemfiles/build/install/include/chemfiles/span.hpp \
     /usr/include/c++/5/iterator \

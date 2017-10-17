@@ -1,0 +1,333 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <cuda.h>
+
+#include "chemfiles.hpp"
+
+/////////
+
+__global__ void init_grilla(float* grilla, int grilla_size, float x_min,
+		float y_min, float z_min, float x_max, float y_max, float z_max,
+		int x_cnt, int y_cnt, int z_cnt, float resolution);
+
+__global__ void in_bbox(float* molecule_points, int x_min, int y_min, int z_min,
+		int x_max, int y_max, int z_max, int natoms, bool* d_atoms_in_x,
+		bool* d_atoms_in_y, bool* d_atoms_in_z, bool* atoms_in_bbox);
+
+__global__ void naive_get_vol(float* grilla, int grilla_size,
+		float* molecule_points, float* vdw_radii, int natoms,
+		float* grilla_void, int * grilla_void_size);
+
+template <typename T> std::vector<unsigned int> sort_indices(const std::vector<T> &v);
+
+void getIndicesFromBoolArray(bool* in_array, const int n,
+		std::vector<int>& indices);
+
+//int parseCLI(const int argc, char**argv, char *filename_0, char *filename_1);
+//void read_mtx(const char *in_filename, float *mtx, const unsigned int M,
+                //const unsigned int N);
+
+/////////
+
+int main(int argc, char **argv)
+{
+	// Get positions and get variables ready.
+	chemfiles::Trajectory in_trj(
+			"/home/german/labo/17/cuda/cfiles/external/1mtn.pdb");
+	auto in_frm = in_trj.read();
+	auto in_top = in_frm.topology();
+	auto in_xyz = in_frm.positions();
+	const static size_t natoms = in_xyz.size();
+	const static size_t in_xyz_memsize = natoms * 3 * sizeof(double);
+	const static size_t in_vdw_memsize = in_xyz.size() * sizeof(double);
+	float *tmp_molecule_points, *molecule_points, *tmp_vdw_radii, *vdw_radii;
+	std::vector<unsigned int> atom_indices_to_sort(in_xyz.size());
+
+	// Allocate memory.
+	tmp_molecule_points = (float*) malloc(in_xyz_memsize);
+	tmp_vdw_radii = (float*) malloc(in_vdw_memsize);
+	cudaMallocManaged((void**)&molecule_points, in_xyz_memsize);
+	cudaMallocManaged((void**)&vdw_radii, in_vdw_memsize);
+	cudaStream_t stream1;
+	cudaStreamCreate(&stream1);
+	cudaMemPrefetchAsync(molecule_points, in_xyz_memsize, cudaCpuDeviceId, stream1);
+	cudaMemPrefetchAsync(vdw_radii, in_xyz_memsize, cudaCpuDeviceId, stream1);
+
+	// Get atoms positions and VdW radii.
+	size_t j = 0;
+    for (const auto &residuo : in_top.residues()) {
+    	for (const auto &i : residuo) {
+            tmp_molecule_points[j * 3] = in_xyz[i][0];
+    		tmp_molecule_points[j * 3 + 1] = in_xyz[i][1];
+    		tmp_molecule_points[j * 3 + 2] = in_xyz[i][2];
+    		tmp_vdw_radii[j] = in_top[i].vdw_radius().value_or(1.5);
+
+    		atom_indices_to_sort[j] = i;
+    		++j;
+    	}
+    }
+	const auto atom_sorting_indices = sort_indices(atom_indices_to_sort);
+
+	// Move sorted data to UM.
+	for (size_t i = 0 ; i < in_xyz.size() ; ++i) {
+		molecule_points[i * 3] =
+				std::move(tmp_molecule_points[atom_sorting_indices[i] * 3]);
+		molecule_points[i * 3 + 1] =
+				std::move(tmp_molecule_points[atom_sorting_indices[i] * 3 + 1]);
+		molecule_points[i * 3 + 2] =
+				std::move(tmp_molecule_points[atom_sorting_indices[i] * 3 + 2]);
+		vdw_radii[i] =
+				std::move(tmp_vdw_radii[atom_sorting_indices[i]]);
+	}
+	// Done with unordered data.
+	free(tmp_vdw_radii);
+	free(tmp_molecule_points);
+
+	// GPU
+	const float x_min = -15.0f;
+	const float x_max = 5.0f;
+	const float y_min = 15.0f;
+	const float y_max = 30.0f;
+	const float z_min = -30.0f;
+	const float z_max = -10.0f;
+	const float resolution = 1.0f;
+	const int x_cnt = (x_max - x_min) / resolution;
+	const int y_cnt = (y_max - y_min) / resolution;
+	const int z_cnt = (z_max - z_min) / resolution;
+	const int grilla_size = x_cnt * y_cnt * z_cnt * 3;
+
+	static const int threadsPerBlock_1 = 1024;
+	static const int blocksPerGrid_1 = 10;
+	dim3 dimBlock(threadsPerBlock_1, 1, 1);
+	dim3 dimGrid(blocksPerGrid_1, 1, 1);
+	float *grilla, *grilla_fill;
+	cudaMallocManaged((void**)&grilla, sizeof(float) * grilla_size);
+	cudaMallocManaged((void**)&grilla_fill, sizeof(float) * grilla_size);
+
+//	cudaMalloc((void**)&grilla, sizeof(float) * 8000);
+//	float *tempo = (float *)malloc(sizeof(float) * 8000);
+
+
+//	cudaMemPrefetchAsync(grilla, sizeof(float) * (x_cnt + y_cnt + z_cnt), 0, 0);
+
+
+	init_grilla<<<dimGrid, dimBlock>>>(grilla, grilla_size, x_min, y_min, z_min,
+			x_max, y_max, z_max, x_cnt, y_cnt, z_cnt, resolution);
+	cudaMemPrefetchAsync(grilla, sizeof(float) * grilla_size, cudaCpuDeviceId,
+			0);
+
+	// Write output.
+	chemfiles::Topology out_top;
+	chemfiles::Frame out_frm;
+	chemfiles::Trajectory out_traj(
+			"/home/german/labo/17/cuda/cfiles/external/grid.pdb", 'w');
+	for (size_t i = 0 ; i < grilla_size ; i+=3) {
+		out_top.add_atom(chemfiles::Atom("H", "H0"));
+		out_frm.add_atom(chemfiles::Atom("H"), chemfiles::Vector3D(
+			grilla[i], grilla[i + 1], grilla[i + 2]));
+    }
+	// Applying the topology to the frame will set the atom names and bonds
+	out_frm.set_topology(out_top);
+	// Write
+	out_traj.write(out_frm);
+
+
+	///////////////////////////////////////////////////
+	// Get the CH triangles.
+	float* CH;
+	cudaMallocManaged((void**)&CH, sizeof(float) * 3 * 3 * 12);
+	// Triangle 0
+	CH[0] = x_min; CH[1] = y_min; CH[2] = z_min;
+	CH[3] = x_max; CH[4] = y_min; CH[5] = z_min;
+	CH[6] = x_min; CH[7] = y_max; CH[8] = z_min;
+	// Triangle 1
+	CH[9] = x_max; CH[10] = y_max; CH[11] = z_min;
+	CH[12] = x_max; CH[13] = y_min; CH[14] = z_min;
+	CH[15] = x_min; CH[16] = y_max; CH[17] = z_min;
+	// Triangle 2
+	CH[18] = x_min; CH[19] = y_min; CH[20] = z_max;
+	CH[21] = x_max; CH[22] = y_min; CH[23] = z_max;
+	CH[24] = x_min; CH[25] = y_max; CH[26] = z_max;
+	// Triangle 3
+	CH[27] = x_max; CH[28] = y_max; CH[29] = z_max;
+	CH[30] = x_max; CH[31] = y_min; CH[32] = z_max;
+	CH[33] = x_min; CH[34] = y_max; CH[35] = z_max;
+	// Triangle 4
+	CH[36] = x_min; CH[37] = y_min; CH[38] = z_min;
+	CH[39] = x_min; CH[40] = y_min; CH[41] = z_max;
+	CH[42] = x_min; CH[43] = y_max; CH[44] = z_min;
+	// Triangle 5
+	CH[45] = x_min; CH[46] = y_max; CH[47] = z_max;
+	CH[48] = x_min; CH[49] = y_min; CH[50] = z_max;
+	CH[51] = x_min; CH[52] = y_max; CH[53] = z_min;
+	// Triangle 6
+	CH[54] = x_max; CH[55] = y_min; CH[56] = z_min;
+	CH[57] = x_max; CH[58] = y_min; CH[59] = z_max;
+	CH[60] = x_max; CH[61] = y_max; CH[62] = z_min;
+	// Triangle 7
+	CH[63] = x_max; CH[64] = y_max; CH[65] = z_max;
+	CH[66] = x_max; CH[67] = y_min; CH[68] = z_max;
+	CH[69] = x_max; CH[70] = y_max; CH[71] = z_min;
+	// Triangle 8
+	CH[72] = x_min; CH[73] = y_min; CH[74] = z_min;
+	CH[75] = x_max; CH[76] = y_min; CH[77] = z_min;
+	CH[78] = x_min; CH[79] = y_min; CH[80] = z_max;
+	// Triangle 9
+	CH[81] = x_max; CH[82] = y_min; CH[83] = z_max;
+	CH[84] = x_max; CH[85] = y_min; CH[86] = z_min;
+	CH[87] = x_min; CH[88] = y_min; CH[89] = z_max;
+	// Triangle 10
+	CH[90] = x_min; CH[91] = y_max; CH[92] = z_min;
+	CH[93] = x_max; CH[94] = y_max; CH[95] = z_min;
+	CH[96] = x_min; CH[97] = y_max; CH[98] = z_max;
+	// Triangle 11
+	CH[99] = x_max; CH[100] = y_max; CH[101] = z_max;
+	CH[102] = x_max; CH[103] = y_max; CH[104] = z_min;
+	CH[105] = x_min; CH[106] = y_max; CH[107] = z_max;
+	///////////////////////////////////////////////////
+
+	// Determinar los átomos q están dentro de la included_area
+	static const int threadsPerBlock_2 = 1024;
+	int tmp = (natoms + threadsPerBlock_2 - 1) / threadsPerBlock_2;
+	static const int blocksPerGrid_2 = (tmp > 10) ? 10 : tmp;
+	dimBlock.x = threadsPerBlock_2;
+	dimGrid.x = blocksPerGrid_2;
+	bool *atoms_in_bbox, *d_atoms_in_x, *d_atoms_in_y, *d_atoms_in_z;
+	cudaMallocManaged((void**)&atoms_in_bbox, sizeof(bool) * natoms);
+	cudaMalloc((void**)&d_atoms_in_x, sizeof(bool) * natoms);
+	cudaMalloc((void**)&d_atoms_in_y, sizeof(bool) * natoms);
+	cudaMalloc((void**)&d_atoms_in_z, sizeof(bool) * natoms);
+
+	in_bbox<<<dimGrid, dimBlock>>>(molecule_points, x_min, y_min, z_min, x_max,
+			y_max, z_max, natoms, d_atoms_in_x, d_atoms_in_y, d_atoms_in_z,
+			atoms_in_bbox);
+	cudaMemPrefetchAsync(atoms_in_bbox, sizeof(bool) * natoms, cudaCpuDeviceId,
+				0);
+
+	std::vector<int> indices;
+	getIndicesFromBoolArray(atoms_in_bbox, natoms, indices);
+
+//	for (size_t i = 0; i < natoms ; ++i) {
+//		std::cout << atoms_in_bbox[i] << "  " << '\n';
+//	}
+
+
+
+/*
+	// Ahora, obtengo las particulas libres
+	float * grilla_void;
+	int * grilla_void_size;
+	cudaMallocManaged((void**)&grilla_void, sizeof(float) * grilla_size);
+	cudaMallocManaged((void**)&grilla_void_size, sizeof(int));
+
+	naive_get_vol<<<dimGrid, dimBlock>>>(grilla, grilla_size, molecule_points,
+			vdw_radii, natoms, grilla_void, grilla_void_size);
+*/
+	return 0;
+}
+
+///////// Functions
+// Helper function for getting the indices that sort a vector.
+template <typename T>
+std::vector<unsigned int> sort_indices(const std::vector<T> &v) {
+
+  // initialize original index locations
+  std::vector<unsigned int> idx(v.size());
+  std::iota(idx.begin(), idx.end(), 0);
+
+  // sort indices based on comparing values in v
+  sort(idx.begin(), idx.end(),
+       [&v](unsigned int i1, unsigned int i2) { return v[i1] < v[i2]; });
+
+  return idx;
+}
+
+// Helper function to get the indices of the true elements of a bool array.
+void getIndicesFromBoolArray(bool* in_array, const int n,
+		std::vector<int>& indices) {
+	size_t i = 0;
+	char *cin_array = (char *) in_array;
+
+	while (i < n) {
+		//std::cout << cin_array[i] << '\n';
+		i = i + sizeof(char);
+	}
+	return;
+}
+///////// Kernels
+
+__global__ void init_grilla(float* grilla, int grilla_size, float x_min, float y_min,
+		float z_min, float x_max, float y_max, float z_max,
+		int x_cnt, int y_cnt, int z_cnt, float resolution) {
+
+	const int nproc = gridDim.x * blockDim.x;
+	int ti = threadIdx.x + blockIdx.x * blockDim.x;
+
+	while (ti < grilla_size) {
+		if (ti % 3 == 0) {
+			float x_step = x_min + resolution *
+					( ( ti % (x_cnt*3) ) / 3 );
+			grilla[ti] = x_step;
+		} else if (ti % 3 == 1) {
+			float y_step = y_min + resolution *
+					( ( ti % (x_cnt * y_cnt * 3) ) / (3 * x_cnt) );
+			grilla[ti] = y_step;
+
+		} else { // ti % 3 == 2
+			float z_step = z_min + resolution *
+					( ti / (3 * x_cnt * y_cnt) );
+			grilla[ti] = z_step;
+		}
+		ti = ti + nproc;
+	}
+
+	return;
+}
+
+__global__ void in_bbox(float* molecule_points, int x_min, int y_min, int z_min,
+		int x_max, int y_max, int z_max, int natoms, bool* d_atoms_in_x,
+		bool* d_atoms_in_y, bool* d_atoms_in_z, bool* atoms_in_bbox) {
+
+	const int nproc = gridDim.x * blockDim.x;
+	int ti = threadIdx.x + blockIdx.x * blockDim.x;
+
+
+	if (ti < natoms) {
+		d_atoms_in_x[ti] = ( (molecule_points[ti*3] > x_min) &&
+				(molecule_points[ti*3] < x_max) ) ? true : false;
+
+		d_atoms_in_y[ti] = ( (molecule_points[ti*3 + 1] > y_min) &&
+						(molecule_points[ti*3 + 1] < y_max) ) ? true : false;
+
+		d_atoms_in_z[ti] = ( (molecule_points[ti*3 + 2] > z_min) &&
+						(molecule_points[ti*3 + 2] < z_max) ) ? true : false;
+	}
+	__syncthreads();
+	if (ti < natoms) {
+		atoms_in_bbox[ti] = d_atoms_in_x[ti] && d_atoms_in_y[ti] &&
+				d_atoms_in_z[ti];
+	}
+
+	return;
+}
+
+__global__ void naive_get_vol(float* grilla, int grilla_size,
+		float* molecule_points, float* vdw_radii, int natoms,
+		float* grilla_void, int * grilla_void_size) {
+
+	const int nproc = gridDim.x * blockDim.x;
+	int i;
+	int ti = threadIdx.x + blockIdx.x * blockDim.x;
+
+	while (ti < grilla_size) {
+		const int xi = ti * 3;
+		const int yi = ti * 3 + 1;
+		const int zi = ti * 3 + 2;
+		float dist_x = grilla[ti] - molecule_points[xi];
+	}
+
+	return;
+}
