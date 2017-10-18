@@ -20,11 +20,12 @@ __global__ void in_bbox(float* molecule_points, int x_min, int y_min, int z_min,
 
 __global__ void naive_get_vol(float* grilla, int grilla_size,
 		float* molecule_points, float* vdw_radii, int natoms,
+		std::vector<int>& indices, int natoms_in_bbox,
 		float* grilla_void, int * grilla_void_size);
 
 template <typename T> std::vector<unsigned int> sort_indices(const std::vector<T> &v);
 
-void getIndicesFromBoolArray(bool* in_array, const int n,
+void getIndicesFromSparseBoolArray(bool* in_array, const int n,
 		std::vector<int>& indices);
 
 //int parseCLI(const int argc, char**argv, char *filename_0, char *filename_1);
@@ -211,27 +212,38 @@ int main(int argc, char **argv)
 	//cudaMemPrefetchAsync(atoms_in_bbox, sizeof(bool) * natoms, cudaCpuDeviceId);
 	cudaMemcpy(atoms_in_bbox, d_atoms_in_bbox, natoms, cudaMemcpyDeviceToHost);
 
+	// Subscriptear la "molecule_points" to get the atoms inside the included
+	// area
 	std::vector<int> indices;
-	getIndicesFromBoolArray(atoms_in_bbox, natoms, indices);
+	// CPU
+	//getIndicesFromSparseBoolArray(atoms_in_bbox, natoms, indices);
+	// GPU
+	static const int threadsPerBlock_2 = 1024;
+		int tmp = (natoms + threadsPerBlock_2 - 1) / threadsPerBlock_2;
+		static const int blocksPerGrid_2 = (tmp > 10) ? 10 : tmp;
+		dimBlock.x = threadsPerBlock_2;
+		dimGrid.x = blocksPerGrid_2;
+	getIndicesFromSparseBoolArray<<<dimGrid, dimBlock>>>
+			(atoms_in_bbox, natoms, indices);
+	int natoms_in_bbox = indices.size();
 
-//	for (size_t i = 0; i < natoms ; ++i) {
-//		std::cout << atoms_in_bbox[i] << "  " << '\n';
-//	}
 
-
-
-/*
 	// Ahora, obtengo las particulas libres
 	float * grilla_void;
 	int * grilla_void_size;
 	cudaMallocManaged((void**)&grilla_void, sizeof(float) * grilla_size);
 	cudaMallocManaged((void**)&grilla_void_size, sizeof(int));
+	dimBlock.x = threadsPerBlock_1;
+	dimGrid.x = blocksPerGrid_1;
 
 	naive_get_vol<<<dimGrid, dimBlock>>>(grilla, grilla_size, molecule_points,
-			vdw_radii, natoms, grilla_void, grilla_void_size);
-*/
+			vdw_radii, natoms, indices, natoms_in_bbox, grilla_void, grilla_void_size);
+
+
 	return 0;
 }
+
+
 
 ///////// Functions
 // Helper function for getting the indices that sort a vector.
@@ -251,7 +263,7 @@ std::vector<unsigned int> sort_indices(const std::vector<T> &v) {
 
 // Helper function to get the indices of the true elements of a bool array.
 // Optimized for large (>500) and sparse bool arrays
-void getIndicesFromBoolArray(bool* in_array, const int n,
+void getIndicesFromSparseBoolArray(bool* in_array, const int n,
 		std::vector<int>& indices) {
 
 	auto sz_lo = sizeof(long);
@@ -315,7 +327,8 @@ __global__ void in_bbox(float* molecule_points, int x_min, int y_min, int z_min,
 	const int nproc = gridDim.x * blockDim.x;
 	int ti = threadIdx.x + blockIdx.x * blockDim.x;
 
-
+	// Get the atoms that lie inside the planes delimited by [xmin, xmax],
+	// [ymin, ymax] and [zmin, zmax].
 	if (ti < natoms) {
 		d_atoms_in_x[ti] = ( (molecule_points[ti*3] > x_min) &&
 				(molecule_points[ti*3] < x_max) ) ? true : false;
@@ -327,16 +340,20 @@ __global__ void in_bbox(float* molecule_points, int x_min, int y_min, int z_min,
 						(molecule_points[ti*3 + 2] < z_max) ) ? true : false;
 	}
 	__syncthreads();
+	// Now get the joint set of the previos atoms to get those that lie inside
+	// the cube
 	if (ti < natoms) {
 		atoms_in_bbox[ti] = d_atoms_in_x[ti] && d_atoms_in_y[ti] &&
 				d_atoms_in_z[ti];
 	}
 
+	// Now, index the "molecule_points" array to get those atoms
 	return;
 }
 
 __global__ void naive_get_vol(float* grilla, int grilla_size,
 		float* molecule_points, float* vdw_radii, int natoms,
+		std::vector<int>& indices, int natoms_in_bbox,
 		float* grilla_void, int * grilla_void_size) {
 
 	const int nproc = gridDim.x * blockDim.x;
